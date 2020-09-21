@@ -27,10 +27,16 @@ xl = iris[,3:5];
 colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
 plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1)
 
-for(i in 1:25){
-  x = runif(1, 0, 7);
-  y = runif(1, 0, 2.5);
-  z <- c(x, y);
-  class <- k1NN(xl, z);
-  points(z[1], z[2], pch = 22, bg = colors[class], asp = 1);
+x = 1;
+y = 0;
+
+while(x <= 7){
+  while(y <= 3){
+    class <- k1NN(xl, c(x,y));
+    points(x, y, pch = 22, bg = colors[class], col = colors[class], asp = 1);
+    
+    y = y + 0.5;
+  }
+  y = 0;
+  x = x + 0.5;
 }
