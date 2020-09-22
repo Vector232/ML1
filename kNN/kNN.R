@@ -13,8 +13,7 @@ sortObjectsByDist = function(xl, z){
   return (orderedXl);
 }
 
-kNN = function(xl, z, k){
-  orderedXl = sortObjectsByDist(xl, z);
+classif_kNN = function(orderedXl, k){
   
   classes = orderedXl[1:k, 3];
   
@@ -25,6 +24,9 @@ kNN = function(xl, z, k){
   return (class)
 }
 
+kNN = function(xl, z, k){
+  return(classif_kNN(sortObjectsByDist(xl, z), k))
+}
 
 xl = iris[,3:5];
 
