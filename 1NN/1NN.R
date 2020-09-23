@@ -18,13 +18,13 @@ k1NN = function(xl, z){
   
   class = orderedXl[1,3];
   
-  return (class)
+  return (c(class))
 }
 
 
 xl = iris[,3:5];
 
-colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
+colors <- c("1" = "red", "2" = "green3", "3" = "blue")
 plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1)
 
 x = 1;
