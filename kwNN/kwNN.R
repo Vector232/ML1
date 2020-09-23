@@ -15,15 +15,15 @@ sortObjectsByDist = function(xl, z){
 }
 
 classif_kwNN = function(orderedXl, k, q){
-
+  
   weightClasses = table(orderedXl[,2])-50;
   
   for(j in 1:k){
-     weightClasses[orderedXl[j,2]] = weightClasses[orderedXl[j,2]] + (orderedXl[j,1] * q^j);
-    }
+    weightClasses[orderedXl[j,2]] = weightClasses[orderedXl[j,2]] + (orderedXl[j,1] * q^j);
+  }
   
   class = names(which.max(weightClasses));
-  print(class);
+  
   return (class)
 }
 
