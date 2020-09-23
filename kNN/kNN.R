@@ -17,8 +17,8 @@ classif_kNN = function(orderedXl, k){
   
   classes = orderedXl[1:k, 3];
   
-  counts = table(classes);
-  
+  counts = table(c(classes));
+ 
   class = names(which.max(counts));
   
   return (class)
@@ -30,7 +30,7 @@ kNN = function(xl, z, k){
 
 xl = iris[,3:5];
 
-colors <- c("setosa" = "red", "versicolor" = "green3", "virginica" = "blue")
+colors <- c("1" = "red", "2" = "green3", "3" = "blue")
 plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1)
 
 x = 1;
@@ -45,5 +45,3 @@ while(x <= 7){
   y = 0;
   x = x + 0.5;
 }
-
-
