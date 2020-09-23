@@ -17,7 +17,7 @@ classif_kNN = function(orderedXl, k){
   
   classes = orderedXl[1:k, 3];
   
-  counts = table(classes);
+  counts = table(c(classes));
   
   class = names(which.max(counts));
   
@@ -39,7 +39,7 @@ LOO = function(xl, sort = sortObjectsByDist, classification = classif_kNN){
       class = classification(orderedXl, k);
       #print(class);
       #print(xl[i,3]);
-      if(class != xl[i,3]){
+      if(class != c(xl[i,3])){
         DataA[k] = DataA[k] + 1;
       }
     }
