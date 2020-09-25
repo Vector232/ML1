@@ -54,4 +54,5 @@ xl = iris[,3:5];
 
 DataA = LOO(xl);  
 print(DataA);
-plot(DataA)
+plot(DataA, type ="l")
+points(which.min(DataA), DataA[which.min(DataA)],pch = 22 , bg = "red")
