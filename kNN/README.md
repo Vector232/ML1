@@ -12,6 +12,27 @@
 3. Среди **k** ближайших соседей находим самый частый класс. В случае паритета выбираем первый попавшийся.
 4. Относим новый объект к выбраному классу.
 
+Код:
+
+```R
+classif_kNN = function(orderedXl, k){
+  #orderedXl - отсортирован по возростанию расстояния до z
+  classes = orderedXl[1:k, 3];
+  
+  counts = table(c(classes));
+ 
+  class = names(which.max(counts));
+  
+  return (class)
+}
+
+kNN = function(xl, z, k){
+  #sortObjectsByDist - сортирует по возростанию растояния до z
+  return(classif_kNN(sortObjectsByDist(xl, z), k))
+}
+
+```
+
 Карта классификации при **k** = 6
 
 ![Ну нет ее и все! Отстань!](/kNN/6NN.png)
