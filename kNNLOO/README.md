@@ -35,4 +35,4 @@ LOO = function(xl, sort = sortObjectsByDist, classification = classif_kNN){
 ```
 График зависимости LOO(k):
 
-![Ну нет ее и все! Отстань!](/kNNLOO/kNNLOO.png)
+![Ну нет ее и все! Отстань!](/kNNLOO/LOO(k)(2).png)
