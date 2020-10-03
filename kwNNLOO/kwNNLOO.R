@@ -18,7 +18,7 @@ classif_kwNN = function(orderedXl, k, q){
   
   weightClasses = table(orderedXl[,2]);
   weightClasses[1:dim(weightClasses)] = 0
-
+  
   for(j in 1:k){
     weightClasses[orderedXl[j,2]] = weightClasses[orderedXl[j,2]] + (orderedXl[j,1] * q^j);
     
@@ -33,7 +33,8 @@ kwNN = function(xl, z, k, q){
   return(classif_kwNN(sortObjectsByDist(xl, z), k, q));
 }
 
-LOO = function(xl, q, sort = sortObjectsByDist, classification = classif_kwNN){
+LOO = function(xl, sort = sortObjectsByDist, classification = classif_kwNN){
+  q = 0.2;
   n = dim(xl)[1]-1;
   DataA = array(0,n);
   # print(n)
@@ -54,10 +55,15 @@ LOO = function(xl, q, sort = sortObjectsByDist, classification = classif_kwNN){
   return (DataA)
 }
 
-
 xl = iris[,3:5];
-DataA = LOO(xl, q=0.2);  
-print(DataA);
-print(which.min(DataA));
 
-plot(DataA)
+DataA = LOO(xl);  
+print(DataA);
+plot(DataA, type ="l", main = "LOO(k, q = 0.1)", xlab = "k", ylab = "LOO")
+
+x = which.min(DataA);
+y = DataA[which.min(DataA)];
+
+label = paste("k = ", x, "\n", "LOO = ", y)
+text(x, y+5, label, pos = 4);
+points(x, y,pch = 22 , bg = "red")
