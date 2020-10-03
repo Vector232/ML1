@@ -35,4 +35,4 @@ kNN = function(xl, z, k){
 
 Карта классификации при **k** = 6 ([подробнее о подборе оптимального **k**](https://github.com/Vector232/ML1/tree/master/kNNLOO)).
 
-![Ну нет ее и все! Отстань!](/kNN/6NN.png)
+![Ну нет ее и все! Отстань!](/kNN/6NN(2).png)
