@@ -40,7 +40,7 @@ core_3 = function(r){
 }
 
 classif_PW = function(xl, h, orderedXl, core = core_1) {
-  l = dim(xl)[1];
+  l = dim(orderedXl)[1];
   n = dim(xl)[2];
   
   weights = table(xl[1:l, n]);
