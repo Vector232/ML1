@@ -40,8 +40,8 @@ while(x <= 7){
   while(y <= 3){
     class <- kNN(xl, c(x,y), k=6);
     points(x, y, pch = 22, bg = colors[class], col = colors[class], asp = 1);
-    y = y + 0.5;
+    y = y + 0.1;
   }
   y = 0;
-  x = x + 0.5;
+  x = x + 0.1;
 }
