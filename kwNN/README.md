@@ -29,3 +29,9 @@ kwNN = function(xl, z, k, q){
 Карта классификации для **kwNN** при **k** = 6 и **q** = 0.8 ([подробнее о подборе оптимального k и q](https://github.com/Vector232/ML1/tree/master/kwNNLOO)).
 
 ![Ну нет ее и все! Отстань!](/kwNN/kwNN.png)
+
+kwNN имеет лучшее качество классификации чем kNN. Особенно заметно это на границах.
+
+![Ну нет ее и все! Отстань!](/kwNN/kwNNvskNN(kNN).png)
+
+![Ну нет ее и все! Отстань!](/kwNN/kwNNvskNN(kwNN).png)
