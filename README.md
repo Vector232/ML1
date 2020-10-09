@@ -11,3 +11,4 @@
 | Парзеновского окна - ядро Епанечникова  | h = 0.4        | 6/150 | [подробнее](https://github.com/Vector232/ML1/tree/master/PW) |
 | Парзеновского окна - квартическое  ядро  | h = 0.4        | 6/150 | [подробнее](https://github.com/Vector232/ML1/tree/master/PW) |
 | Парзеновского окна - треугольное ядро   | h = 0.4        | 6/150 | [подробнее](https://github.com/Vector232/ML1/tree/master/PW) |
+| [Итоги](https://github.com/Vector232/ML1/tree/master/results) |
