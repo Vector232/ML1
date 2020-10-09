@@ -39,6 +39,11 @@ core_3 = function(r){
     return(0)
 }
 
+core_4 = function(r)
+{
+  return (((2*pi)^(-1/2)) * exp(-1/2*r^2)) 
+}
+
 classif_PW = function(xl, h, orderedXl, core = core_1) {
   l = dim(orderedXl)[1];
   n = dim(xl)[2];
