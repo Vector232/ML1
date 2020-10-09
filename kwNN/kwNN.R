@@ -43,7 +43,7 @@ y = 0;
 
 while(x <= 7){
   while(y <= 3){
-    class = kwNN(xl, c(x,y), k=6, q=0.2);
+    class = kwNN(xl, c(x,y), k=6, q=0.8);
     points(x, y, pch = 22, col = colors[class], asp = 1, main = "kwNN");
     y = y + 0.1;
   }
