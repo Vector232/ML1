@@ -64,16 +64,14 @@ SetPots = function(xl, err){
   n = ncol(xl)
   error = err + 1
   pots = array(0,l)
-  distances = matrix(0,l,l)
-  
-  for(i in 1:l){
-    distances[i,] = sortObjectsByDist(xl, c(xl[i,1],xl[i,2]))
-    print(i)
-  }
+  distances = matrix(-1,l,l)
   
   while(error > err){
     while(TRUE){
       i = sample(1:l, 1);
+      if(distances[i,1] == -1){
+        distances[i,] = sortObjectsByDist(xl, c(xl[i,1],xl[i,2]))
+      }
       class = classif_PF(xl, pots, h=0.4, distances[i,]);
       
       if(class != c(xl[i,n])){
