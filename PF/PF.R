@@ -66,13 +66,16 @@ SetPots = function(xl, err){
   pots = array(0,l)
   distances = matrix(-1,l,l)
   
+  for(i in 1:l){
+    distances[i,] = sortObjectsByDist(xl, c(xl[i,1],xl[i,2]))
+    print(i)
+  }
+  
   while(error > err){
     while(TRUE){
       i = sample(1:l, 1);
-      if(distances[i,1] == -1){
-        distances[i,] = sortObjectsByDist(xl, c(xl[i,1],xl[i,2]))
-      }
-      class = classif_PF(xl, pots, h=0.4, distances[i,]);
+      
+      class = classif_PF(xl, pots, h=1, distances[i,]);
       
       if(class != c(xl[i,n])){
         pots[i] = pots[i] + 1;
@@ -80,14 +83,33 @@ SetPots = function(xl, err){
       }
       error = 0;
       for(j in 1:l){
-        class = classif_PF(xl[-j,], pots, h=0.4, distances[j,]);
+        class = classif_PF(xl[-j,], pots, h=1, distances[j,]);
         if(class != c(xl[j,n])){
           error = error + 1;
         }
       }
     }
-    print(error)
+    e = paste("error = ", error);
+    print(e)
     print(pots)
+  }
+  print("---------------------------")
+  print(pots)
+  return(pots)
+}
+
+
+
+
+colors <- c("1" = "red", "2" = "green3", "3" = "blue")
+plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1)
+xl = iris[,3:5]
+h = 1
+pots = SetPots(xl, 5)
+x = 4
+y = 1
+class = PF(xl,pots, h, c(x,y))
+points(x, y, pch = 22, col = colors[class], asp = 1)
   }
   
   return(pots)
