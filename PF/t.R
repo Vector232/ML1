@@ -44,15 +44,15 @@ core_4 = function(r)
   return (((2*pi)^(-1/2)) * exp(-1/2*r^2)) 
 }
 
-classif_PF = function(xl, pots, h, orderedXl, core = core_4) {
-  l = nrow(xl);
-  n = ncol(xl);
+classif_PF = function(xl, pots, h, orderedXl, core = core_1) {
+  l = nrow(xl)
+  n = ncol(xl)
   
-  weights = table(xl[, n]);
-  weights[1:dim(weights)] = 0;
+  weights = table(xl[, n])
+  weights[1:dim(weights)] = 0
   
   for (i in 1:l) {
-    weights[xl[i, n]] = weights[xl[i, n]] + (pots[i] * core(orderedXl[i] / h));
+    weights[xl[i, n]] = weights[xl[i, n]] + (pots[i] * core(orderedXl[i] / h))
   }
   if (max(weights) != 0)
     return (which.max(weights))
@@ -61,37 +61,46 @@ classif_PF = function(xl, pots, h, orderedXl, core = core_4) {
 }
 
 PF = function(xl, pots, h, z){
-  return(classif_PF(xl, pots, h, sortObjectsByDist(xl, z)));
+  return(classif_PF(xl, pots, h, sortObjectsByDist(xl, z)))
 }
 
-SetPots = function(xl, err){
+SetPots = function(xl, err,h){
   l = nrow(xl)
   n = ncol(xl)
   error = err + 1
+  nerror = 0;
   pots = array(0,l)
-  distances = matrix(-1,l,l)
+  distances = matrix(-1,l,l-1)
   
   for(i in 1:l){
-    distances[i,] = sortObjectsByDist(xl, c(xl[i,1],xl[i,2]))
+    distances[i,] = sortObjectsByDist(xl[-i,], c(xl[i,1],xl[i,2]))
     print(i)
   }
   
   while(error > err){
     while(TRUE){
-      i = sample(1:l, 1);
-      
-      class = classif_PF(xl, pots, h=1, distances[i,]);
+      f = 0
+      i = sample(1:l, 1)
+      class = classif_PF(xl[-i,], pots, h, distances[i,])
       
       if(class != c(xl[i,n])){
-        pots[i] = pots[i] + 1;
+        pots[i] = pots[i] + 1
+        f = 1
         break;
       }
-      error = 0;
+      nerror = 0;
       for(j in 1:l){
-        class = classif_PF(xl[-j,], pots, h=1, distances[j,]);
+        class = classif_PF(xl[-j,], pots, h, distances[j,])
         if(class != c(xl[j,n])){
-          error = error + 1;
+          nerror = nerror + 1
         }
+      }
+      
+      if(nerror>error && f){
+        pots[i] = pots[i] - 1
+      }
+      else{
+        error = nerror
       }
     }
     e = paste("error = ", error);
@@ -103,31 +112,25 @@ SetPots = function(xl, err){
   return(pots)
 }
 
- pots = c( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-           0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-           0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
-           0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-           0, 0)
 
 
-
-
-colors <- c("1" = "red1", "2" = "green1", "3" = "blue1",
-            "11" = "red2", "22" = "green2", "33" = "blue2",
-            "111" = "red3", "222" = "green3", "333" = "blue3")
+pots = c( 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+           0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+           1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pots = SetPots(xl,6,h=0.4)
+colors <- c("1" = "red1", "2" = "green1", "3" = "blue1")
 plot(iris[, 3:4], pch = 21, bg = colors[iris$Species], col = colors[iris$Species], asp = 1, main = "Ядро Епанечникова")
 xl = iris[,3:5]
 
-h = 1
 x = 1;
 y = 0;
 
 while(x <= 7){
   while(y <= 3){
-    class <- PF(xl, pots, h = 1, c(x,y));
+    class <- PF(xl, pots, h=0.4, c(x,y));
     points(x, y, pch = 22, col = colors[class], asp = 1);
     y = y + 0.1;
   }
   y = 0;
   x = x + 0.1;
-} 
+}
