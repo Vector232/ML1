@@ -12,7 +12,9 @@
 | Парзеновского окна - квартическое  ядро    | h = 0.4        | 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PW) |
 | Парзеновского окна - треугольное ядро      | h = 0.4        | 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PW) |
 | Парзеновского окна - Гауссовское ядро      | h = 0.1        | 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PW) |
-| Потенциальных функций                      | -              | 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
+| Потенциальных функций - ядро Епанечникова  |  {p} = 17      | 0.06 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
+| Потенциальных функций - квартическое  ядро |  {p} = 16      | 0.07 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
+| Потенциальных функций - Гауссовское ядро   |  {p} = 3       | 0.13 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
 | [Преимущество **kNN** перед **kNN**  ](https://github.com/Vector232/ML1/tree/master/results) |
 
 
