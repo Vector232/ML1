@@ -42,6 +42,54 @@ PF = function(xl, pots, h, z){
 }
 ```
 
+Подбор потенциалов выполняется последовательно, следовательно результат всегда одинаковый, время работы всегда одинаковое, но качество от этого страдает.
+
+Кдо:
+
+```R
+SetPots = function(xl, err,h){
+  l = nrow(xl)
+  n = ncol(xl)
+  error = 999
+  nerror = 0;
+  pots = array(0,l)
+  distances = matrix(-1,l,l-1)
+  
+  for(i in 1:l){
+    distances[i,] = sortObjectsByDist(xl[-i,], c(xl[i,1],xl[i,2]))
+    print(i)
+  }
+    for(i in 1:l){
+      class = classif_PF(xl[-i,], pots, h, distances[i,])
+      
+      if(class != c(xl[i,n])){
+        pots[i] = pots[i] + 1
+        
+        nerror = 0;
+        for(j in 1:l){
+          class = classif_PF(xl[-j,], pots, h, distances[j,])
+          if(class != c(xl[j,n])){
+            nerror = nerror + 1
+          }
+        }
+        
+        if(nerror>=error){
+          pots[i] = pots[i] - 1
+        }
+        else if(nerror <= err){
+          i = 1
+        }
+        else{
+          error = nerror
+          e = paste("error = ", error);
+          print(e)
+          print(pots)
+        }
+      }
+     }
+  }
+```
+
 Карты потенциалов:
 
 ![Ну нет ее и все! Отстань!](/PF/PF11.png)
