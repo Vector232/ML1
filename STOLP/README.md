@@ -28,7 +28,7 @@ stolp = function(xl, classes,errors) {
   plot(1:n, sort(risk), col="black", bg="blue",pch=20,main = "Риски",ylab = "Риск ", xlab = "Данные")
   lines(1:n, sort(risk), lwd = 2, col = "black")
   
-  #удаляем объекты с рисками меньше нуля, как неинформативные
+  #удаляем объекты с рисками меньше нуля, как ошибочные и шумовые
   badpoints = which(risk < 0)
   pointsWE=xl[-badpoints,]
   classes = classes[-badpoints]
@@ -62,7 +62,7 @@ stolp = function(xl, classes,errors) {
     }
     if( count < errors ) break
     
-    #удаляем шумовые элементы
+    
     minrisk = index[which.min(risk)]
     etalone = rbind(etalone, pointsWE[minrisk,])
     pointsWE = pointsWE[-minrisk,]
