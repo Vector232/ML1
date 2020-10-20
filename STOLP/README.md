@@ -70,8 +70,6 @@ stolp = function(xl, classes,errors) {
     n = n - 1
     
   }
-  plot(pointsWE[,1:2],col = colors[classes], pch = 21, asp = 1, main = "STOLP", ylab = "y ", xlab = "x")
-  points(etalone[,1:2], bg = colors[etalone[,3]], pch = 21)
 }
 ```
 
