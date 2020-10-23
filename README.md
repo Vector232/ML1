@@ -46,4 +46,4 @@
 
 STOLP:
 
-[Ну нет ее и все! Отстань!](/STOLP/STOLPendCM.png)
+![Ну нет ее и все! Отстань!](/STOLP/STOLPendCM.png)
