@@ -107,11 +107,6 @@ NBS = function(z, xl){
       best = class
     }
   }
-  e = 0.000001
-  if(max < -(1-e)){
-    max = e
-    best = 0
-  }
   
   ans = c(best, exp(max))
   
