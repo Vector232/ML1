@@ -16,9 +16,9 @@
 | Потенциальных функций - ядро Епанечникова  |  {p} = 17      | 0.06 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
 | Потенциальных функций - квартическое  ядро |  {p} = 16      | 0.07 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
 | Потенциальных функций - Гауссовское ядро   |  {p} = 3       | 0.13 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
-| Парзеновского окна + STOLP - Гауссовское ядро      | h = 0.1        | 0.026 % | [подробнее](https://github.com/Vector232/ML1/tree/master/STOLP) |
-|Линии уровня                                        | - | - | [подробнее](https://github.com/Vector232/ML1/tree/master/lines) |
-
+| Парзеновского окна + STOLP - Гауссовское ядро | h = 0.1     | 0.026 %| [подробнее](https://github.com/Vector232/ML1/tree/master/STOLP) |
+|Линии уровня                                   | - | - | [подробнее](https://github.com/Vector232/ML1/tree/master/lines) |
+|Наивный Байесовский классификатор              | - | - | [подробнее](https://github.com/Vector232/ML1/tree/master/NBC) |
 
 
 Карты классификаций:
