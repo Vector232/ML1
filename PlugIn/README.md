@@ -42,4 +42,4 @@ PI = function(z, xl){
 
 Плотности распределения при lyambda = (1,1,1):
 
-[На обеде!](PlagIn/PI1.png)
+![На обеде!](/PlugIn/PI1.png)
