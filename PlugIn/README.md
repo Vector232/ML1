@@ -39,3 +39,7 @@ PI = function(z, xl){
   return(ans)
 }
 ```
+
+Плотности распределения при lyambda = (1,1,1):
+
+[На обеде!](PlagIn/PI1.png)
