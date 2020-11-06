@@ -63,7 +63,7 @@ print(fig)
 
 Уравнение:
 
-![Ну нет ее и все! Отстань!](/lines/linesf1.png)
+![Ну нет ее и все! Отстань!](/lines/linesf1.jpg)
 
-![Ну нет ее и все! Отстань!](/lines/linesf2.png)
+![Ну нет ее и все! Отстань!](/lines/linesf2.jpg)
 
