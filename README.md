@@ -48,3 +48,7 @@
 STOLP:
 
 ![Ну нет ее и все! Отстань!](/STOLP/STOLPendCM.png)
+
+NNBC:
+
+![Ну нет ее и все! Отстань!](/NNBC/NNBC0.png)
