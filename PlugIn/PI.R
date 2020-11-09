@@ -1,6 +1,6 @@
 frasp = function(z, mu, m){
   
-  mu <- as.numeric(mu)
+  mu = as.numeric(mu)
   nm = as.matrix(z-mu)
     
   tnm = t(nm)
@@ -20,7 +20,7 @@ fnewmatrix = function(xl, mu){
   l = ncol(xl)
   
   
-  mu <- t(as.matrix(as.numeric(mu[1 , 1:l - 1])))
+  mu = t(as.matrix(as.numeric(mu[1 , 1:l - 1])))
   
   ans = matrix(0, l-1, l-1)
   
@@ -38,7 +38,8 @@ fnewmatrix = function(xl, mu){
 fmu = function(xl){
   l = ncol(xl)
   ans = data.frame()
-  for(i in levels(xl[,l])){
+  
+  for(i in unique(xl[,l])){
     signs = xl[xl[,l] == i, ]
     m = nrow(signs)
     
