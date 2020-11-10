@@ -5,38 +5,37 @@
 Оценим параметры функций правдоподобия по частям обучающей выборки  для каждого класса. Затем эти выборочные оценки подставим в оптимальный байесовский классификатор. Получим байесовский нормальный классификатор, который называется также подстановочным.
 
 ```R
-PI = function(z, xl){
-  mu = fmu(xl)
-  aprior = faprior(xl)
-  l = dim(mu)[1]
+PI = function(xl){
+  n = ncol(xl)-1
+  l = nrow(xl)
+  classes = levels(xl[,n+1])
   
-  lyambda = c(1, 1, 1)
-  max = -1
-  best = aprior[1,1]
   
-  for(i in 1:l){
+  classes = levels(xl[,n+1])
+  l = length(classes)
+  
+  mus = matrix(0, l, n)
+  stds = matrix(0, l, n)
+  aprior = rep(0, l)
+  lyambda = rep(1, l)
+  for (i in 1:l) {
+    c = factor(classes[i], classes)
     
-    class = aprior[i,1]
-    
-    x = xl[c(xl[,3])==i,]
-    M = fnewmatrix(x , mu[i,])
-   
-    tight = frasp(z, mu[i, 1:l-1], M)
-    
-    lr = lyambda[i] * aprior[i, 2] * tight 
-    
-    if(lr > max){
-      max = lr
-      best = class
+    xll = xl[xl[,n+1]==c,]
+    aprior[i] = length(xll[,1]) / length(xl[,1])
+    for (j in 1:n) {
+      mus[i,j] = mean(xll[,j])
+      stds[i,j] = sqrt(var(xll[,j]))
     }
   }
-  if(max < (-0.9999)){
-    best = 4
+  
+  covar = list()
+  for (c in 1:length(classes)) {
+    xll = xl[xl[,n+1]==classes[c],1:n]
+    covar[[c]] = cov(xll)
   }
   
-  ans = c(best, max)
-  
-  return(ans)
+  classificationmap(function(x) f(x, classes, aprior, mus, covar, lyambda), xl)
 }
 ```
 
