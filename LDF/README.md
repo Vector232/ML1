@@ -8,6 +8,9 @@
 
 ![Ну нет ее и все! Отстань!](/LDF/ldff.PNG)
 
+
+Код:
+
 ```R
 LDF = function(xl){
   n = ncol(xl)-1
