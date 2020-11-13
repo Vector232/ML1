@@ -7,7 +7,7 @@
 Код:
 
 ```R
-NBS = function(z, xl){
+NBC = function(z, xl){
   mu = fmu(xl)
   sigma = fsigma(xl)
   aprior = faprior(xl)
