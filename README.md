@@ -52,7 +52,7 @@ STOLP:
 
 NNBC:
 
-![Ну нет ее и все! Отстань!](/NBC/NNBC0.png)
+![Ну нет ее и все! Отстань!](/NBC/NNBC111.png)
 
 PlugIn:
 
