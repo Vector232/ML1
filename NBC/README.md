@@ -7,33 +7,28 @@
 Код:
 
 ```R
-NBC = function(z, xl){
-  mu = fmu(xl)
-  sigma = fsigma(xl)
-  aprior = faprior(xl)
-  l = dim(mu)[1]
-  lyambda = seq(1,l)
+NBC = function(xl){
+  n = ncol(xl)-1
+  l = nrow(xl)
+  classes = levels(xl[,n+1])
+  m = length(classes)
   
-  max = -1
-  best = aprior[1,1]
   
-  for(i in 1:l){
-    class = aprior[i,1]
-    
-    r = log( lyambda[i] * aprior[i,2] )
-    
-    l = ftight(z,class,mu,sigma)
-    lr = l + r
-    
-    if(lr > max){
-      max = lr
-      best = class
+  mus = matrix(0, m, n)
+  stds = matrix(0, m, n)
+  aprior = array(0, m)
+  
+  for (i in 1:m) {
+    c = factor(classes[i], levels=classes)
+    xll = xl[xl[,n+1]==c,]
+    aprior[i] = length(xll[,1]) / length(xl[,1])
+    for (j in 1:n) {
+      mus[i,j] = mean(xll[,j])
+      stds[i,j] = sqrt(var(xll[,j]))
     }
   }
   
-  ans = c(best, exp(max))
-  
-  return(ans)
+  classificationmap(function(x) f(x, classes, aprior, mus, stds), xl)
 }
 ```
 
