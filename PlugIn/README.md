@@ -12,6 +12,8 @@
 
 ![На обеде!](/PlugIn/PIf20.png)
 
+![На обеде!](/PlugIn/PIRP.png)
+
 ```R
 PI = function(xl){
   n = ncol(xl)-1
