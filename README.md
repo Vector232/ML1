@@ -18,7 +18,7 @@
 | Потенциальных функций - Гауссовское ядро   |  {p} = 3       | 0.13 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
 | Парзеновского окна + STOLP - Гауссовское ядро | h = 0.1     | 0.026 %| [подробнее](https://github.com/Vector232/ML1/tree/master/STOLP) |
 |Линии уровня                                   | - | - | [подробнее](https://github.com/Vector232/ML1/tree/master/lines) |
-|Наивный Байесовский классификатор              |lambda = (500,500,500)| 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/NBC) |
+|Наивный Байесовский классификатор              |lambda = (1,1,1)| 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/NBC) |
 |PlugIn                                         |lambda = (1,1,1)| 0.026 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PlugIn) |
 |LDF                                            |         -      | 0.04 %  | [подробнее](https://github.com/Vector232/ML1/tree/master/LDF) |
 
