@@ -17,11 +17,13 @@
 | Потенциальных функций - квартическое  ядро |  {p} = 16      | 0.07 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
 | Потенциальных функций - Гауссовское ядро   |  {p} = 3       | 0.13 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PF) |
 | Парзеновского окна + STOLP - Гауссовское ядро | h = 0.1     | 0.026 %| [подробнее](https://github.com/Vector232/ML1/tree/master/STOLP) |
+| ***Байесовские алгоритмы классификации***     |***Условия***| ***LOO*** |  ***Ссылка*** |
 |Линии уровня                                   | - | - | [подробнее](https://github.com/Vector232/ML1/tree/master/lines) |
 |Наивный Байесовский классификатор              |lambda = (1,1,1)| 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/NBC) |
 |PlugIn                                         |lambda = (1,1,1)| 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PlugIn) |
 |LDF                                            |         -      | 0.04 %  | [подробнее](https://github.com/Vector232/ML1/tree/master/LDF) |
-
+| ***Линейные алгоритмы классификации***     |***Условия***| ***LOO*** |  ***Ссылка*** |
+|SVM                                            |         -      | -       | [подробнее](https://github.com/Vector232/ML1/tree/master/SVM) |
 Карты классификаций:
 
 ![Ну нет ее и все! Отстань!](/1NN/1NN(2).png)
