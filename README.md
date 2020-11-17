@@ -23,7 +23,8 @@
 |PlugIn                                         |lambda = (1,1,1)| 0.04 % | [подробнее](https://github.com/Vector232/ML1/tree/master/PlugIn) |
 |LDF                                            |         -      | 0.04 %  | [подробнее](https://github.com/Vector232/ML1/tree/master/LDF) |
 | ***Линейные алгоритмы классификации***     |***Условия***| ***LOO*** |  ***Ссылка*** |
-|SVM                                            |         -      | -       | [подробнее](https://github.com/Vector232/ML1/tree/master/SVM) |
+|Логистическая	регрессия                    |         -      | -       | [подробнее](https://github.com/Vector232/ML1/tree/master/LC) |
+|SVM                                         |         -      | -       | [подробнее](https://github.com/Vector232/ML1/tree/master/SVM) |
 Карты классификаций:
 
 ![Ну нет ее и все! Отстань!](/1NN/1NN(2).png)
