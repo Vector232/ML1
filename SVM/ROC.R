@@ -24,6 +24,7 @@ xl[,2] = runif(r,0,100)
 xl[1:(r/2),3] = 1
 xl[(r/2):r,3] = 2
 #print(xl)
+xl = iris[51:150,3:5]
 class = unique(xl[,3])
 
 sortedxll = sortObjectsByDist(xl)
@@ -36,16 +37,16 @@ AUC = 0
 x = 0
 y = 0
 plot(x,y, pch = 21, bg = "yellow", main = "ROC", xlim=c(0,la+1), ylim=c(0,lb+1))
-colors = c("red","blue")
+colors = c("red","green","blue")
 for(i in 1:nrow(xl)){
-  if(sortedxll[i,3]==class[1]){
+  if(sortedxll[i,3]==class[2]){
     x = x + 1
     points(x, y, pch = 21, bg = colors[sortedxll[i,3]])
     add = 1/la
     FRP = FRP + add
     AUC = AUC + TRP*add
   }
-  else if(sortedxll[i,3]==class[2]){
+  else if(sortedxll[i,3]==class[1]){
     y = y + 1
     points(x, y, pch = 21, bg = colors[sortedxll[i,3]])
     TRP = TRP + (1/lb)
