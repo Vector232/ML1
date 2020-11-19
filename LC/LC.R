@@ -95,10 +95,10 @@ sigma21 = 0.5
 sigma12 = 0.5
 sigma22 = 0.5
 
-xl1 <- mvrnorm(n/2, c(mu11, mu21), matrix(c(sigma11, 0, 0, sigma21), 2, 2))
-xl2 <- mvrnorm(n/2, c(mu12, mu22), matrix(c(sigma12, 0, 0, sigma22), 2, 2))
-xl <- rbind(cbind(xl1, 1), cbind(xl2, -1))
+xl1 = mvrnorm(n/2, c(mu11, mu21), matrix(c(sigma11, 0, 0, sigma21), 2, 2))
+xl2 = mvrnorm(n/2, c(mu12, mu22), matrix(c(sigma12, 0, 0, sigma22), 2, 2))
+xl = rbind(cbind(xl1, 1), cbind(xl2, -1))
 
-xll <- normalize(xl)
-xll <- addcol(xll)
+xll = normalize(xl)
+xll = addcol(xll)
 LC(xll)
