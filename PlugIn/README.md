@@ -59,11 +59,11 @@ PI = function(xl){
 
 **Эллипс ->**
 
-![На обеде!](/PlugIn/PI31.png)
+![На обеде!](/PlugIn/PItr1.png)
 
 **Порабола ->**
 
-![На обеде!](/PlugIn/PI41.png)
+![На обеде!](/PlugIn/PItr2.png)
 
 **Гипербола ->**
 
