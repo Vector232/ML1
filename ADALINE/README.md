@@ -1,4 +1,4 @@
-![Ну нет ее и все! Отстань!](/LC/ADALINEiter2.png)
+![Ну нет ее и все! Отстань!](/LC/ADALINESCREENSHOT.PNG)
 
 ```R
 LOSS = function(x){
@@ -13,5 +13,5 @@ f = function(w, obj, class, eta){
   return(w - c(eta) * (w %*% obj - class) %*% obj)
 }
 ```
+![Ну нет ее и все! Отстань!](/LC/ADALiter2.png)
 
-![Ну нет ее и все! Отстань!](/LC/ADALINESCREENSHOT.PNG)
