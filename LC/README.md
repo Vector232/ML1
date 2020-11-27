@@ -48,5 +48,5 @@ GS = function(xl, eta, lyambda){
 }
 ```
 
-![Ну нет ее и все! Отстань!](/LC/LCiter1.PNG)
+![Ну нет ее и все! Отстань!](/LC/LCiter1.png)
 
